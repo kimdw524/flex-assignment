@@ -1,5 +1,13 @@
 # flex-assignment
 
+[useFilter.ts](/src/hooks/useFilter.ts)
+
+[useSearchParams.ts](/src/hooks/useSearchParams.ts)
+
+[useSearchParamsAdapter.ts](/src/hooks/useSearchParamsAdapter.ts)
+
+[queryString.ts](/src/utils/queryString.ts)
+
 ## 소개
 
 <img width="893" height="253" alt="image" src="https://github.com/user-attachments/assets/eff35257-0d1c-4242-a6a6-ae770b4d92d1" />
@@ -55,10 +63,6 @@ export const resolveLazy = <T>(value: Lazy<T>): T => {
 ```
 
 ### validation 비용 줄이기
-
-검증 비용을 줄이기 위해 `checkFilter`를 호출하는 필드만 유효성 검사를 하는 방법을 추가하는 것을 고민했으나
-
-아래처럼 다른 필드와 연관 관계가 있을 수 있으므로 적용하지 못했습니다.
 
 ```typescript
 z
@@ -133,5 +137,3 @@ export const useSearchParams = <
   }, [searchParams, defaultValue, validate]);
 };
 ```
-
-URL (searchParams)의 값을 초기에만 읽고, 필터를 State로만 관리할 경우 성능상 이점이 있으나 pushState 대응이 불가능
